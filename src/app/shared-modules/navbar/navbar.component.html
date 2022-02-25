@@ -1,1 +1,19 @@
-<p>navbar works!</p>
+<nav class="nav">
+  <div class="d-flex justify-content-between align-items-center w-100">
+    <a
+      class="nav-link"
+      routerLinkActive="active"
+      [routerLink]="['users/list-users']"
+      >Users List</a
+    >
+
+    <a class="nav-link" routerLinkActive="active" [routerLink]="['']">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png"
+        alt="App-Logo"
+      />
+    </a>
+
+    <a class="nav-link" href="#">Logout</a>
+  </div>
+</nav>

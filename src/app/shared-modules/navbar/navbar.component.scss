@@ -1,0 +1,20 @@
+@import "/src/app/core/main-style.scss";
+
+nav {
+  box-shadow: 2px 2px 20px 0px $shadow;
+
+  & .active {
+    color: $orchid !important;
+  }
+  & .nav-link {
+    color: $denim;
+  }
+  & div {
+    & a {
+      & img {
+        width: 3em;
+        height: 3em;
+      }
+    }
+  }
+}

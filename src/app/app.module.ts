@@ -3,20 +3,33 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './shared-modules/navbar/navbar.component';
-import { FooterComponent } from './shared-modules/footer/footer.component';
+import { RouterModule, Routes } from '@angular/router';
+import { SharedModule } from './shared-modules/shared.module';
+import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent,
+  },
+  {
+    path: 'users',
+    loadChildren: () =>
+      import('./users-module/users.module').then((m) => m.UsersModule),
+  },
+];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    FooterComponent
-  ],
+  declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule,
+    RouterModule.forChild(routes),
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
