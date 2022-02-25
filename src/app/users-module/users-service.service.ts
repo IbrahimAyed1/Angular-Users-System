@@ -10,13 +10,22 @@ import { User } from './user.model';
 @Injectable({
   providedIn: 'root',
 })
-export class UsersServiceService {
+export class UsersService {
   private base: string = 'https://reqres.in/api/';
 
   constructor(private http: HttpClient) {}
 
   getAllUsers(): Observable<PaginatedResult<User>> {
     return this.http.get<PaginatedResult<User>>(this.base + 'users');
+  }
+  getUserById(id: number): Observable<IResult<User>> {
+    return this.http.get<Result<User>>(this.base + 'users/' + id);
+  }
+  updateUser(User: User, id: number) {
+    return this.http.put(this.base + 'users/' + id, User);
+  }
+  deleteUser(id: number): Observable<IResult<string>> {
+    return this.http.get<Result<string>>(this.base + 'users/' + id);
   }
 }
 // pipe(map((response:IResult<User>) => response))

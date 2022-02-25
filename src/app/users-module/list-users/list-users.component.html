@@ -18,8 +18,22 @@
                 {{ user.first_name }} {{ user.last_name }}
               </span>
             </div>
-            <div>
-              <span [routerLink]="['../profile']">View</span>
+
+            <div class="d-flex mt-2">
+              <button
+                type="button"
+                [routerLink]="['../profile', user.id]"
+                class="btn ViewBtn mx-2"
+              >
+                View Profile
+              </button>
+              <button
+                (click)="confirmationMessage(user.id)"
+                type="button"
+                class="btn delBtn"
+              >
+                🗑️
+              </button>
             </div>
           </div>
         </li>

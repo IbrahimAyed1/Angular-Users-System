@@ -1,0 +1,21 @@
+@import "/src/app/core/main-style.scss";
+
+h3 {
+  color: $orchid;
+}
+div {
+  text-align: center;
+}
+img {
+  border-radius: 50%;
+}
+.update-btn,
+img {
+  background-color: $denim;
+  color: white;
+  transition: all 400ms;
+  &:hover {
+    transform: translate(1px, 1px);
+    box-shadow: 2px 2px 20px 0px $shadow;
+  }
+}

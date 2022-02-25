@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from './shared-modules/shared.module';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -28,6 +29,7 @@ const routes: Routes = [
     SharedModule,
     RouterModule.forChild(routes),
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

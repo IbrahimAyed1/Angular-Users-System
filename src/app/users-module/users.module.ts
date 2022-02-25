@@ -7,11 +7,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { NotfoundComponent } from '../shared-modules/notfound/notfound.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: 'list-users', component: ListUsersComponent },
   { path: 'add-user', component: CreateUserComponent },
-  { path: 'update-user', component: UpdateUserComponent },
+  { path: 'update-user/:id', component: UpdateUserComponent },
   { path: 'profile/:id', component: ProfileComponent },
   { path: '**', component: NotfoundComponent },
 ];
@@ -23,6 +24,6 @@ const routes: Routes = [
     UpdateUserComponent,
     ProfileComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [CommonModule, RouterModule.forChild(routes), FormsModule],
 })
 export class UsersModule {}

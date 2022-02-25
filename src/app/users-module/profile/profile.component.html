@@ -1,1 +1,40 @@
-<p>profile works!</p>
+<div class="wrapper d-flex justify-content-center align-items-center mt-2">
+  <div class="card w-75">
+    <div class="card-body">
+      <div
+        *ngIf="user_profile; else loading"
+        class="d-flex align-items-center justify-content-center"
+      >
+        <div>
+          <img
+            [src]="user_profile.avatar"
+            alt="{{ user_profile.first_name }} profile picture"
+          />
+
+          <h3 class="card-title">
+            {{ user_profile.first_name }} {{ user_profile.last_name }}
+          </h3>
+          <span class="lead">
+            {{ user_profile.email }}
+          </span>
+        </div>
+      </div>
+      <div
+        *ngIf="user_profile; else loading"
+        class="d-flex align-items-center justify-content-center mt-2"
+      >
+        <button
+          type="button"
+          class="btn update-btn"
+          [routerLink]="['/users/update-user', user_profile.id]"
+        >
+          Update User Data
+        </button>
+        <!-- <span>
+          <a >Edit</a>
+        </span> -->
+      </div>
+      <ng-template #loading>Loading...</ng-template>
+    </div>
+  </div>
+</div>
