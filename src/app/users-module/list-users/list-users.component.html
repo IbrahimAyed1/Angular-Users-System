@@ -3,6 +3,13 @@
     <div class="card-body">
       <h5 class="card-title">Users List</h5>
       <h6 class="card-subtitle mb-2 text-muted">This is a full users list</h6>
+      <button
+        type="button"
+        [routerLink]="['../add-user']"
+        class="btn ViewBtn mx-2 mb-2"
+      >
+        Create New User
+      </button>
       <ul class="list-group">
         <li
           *ngFor="let user of usersArray; let i = index"
@@ -30,9 +37,9 @@
               <button
                 (click)="confirmationMessage(user.id)"
                 type="button"
-                class="btn delBtn"
+                class="btn btn-danger"
               >
-                🗑️
+                X
               </button>
             </div>
           </div>

@@ -7,9 +7,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { NotfoundComponent } from '../shared-modules/notfound/notfound.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
+  { path: 'login', component: LoginComponent },
   { path: 'list-users', component: ListUsersComponent },
   { path: 'add-user', component: CreateUserComponent },
   { path: 'update-user/:id', component: UpdateUserComponent },
@@ -23,7 +25,13 @@ const routes: Routes = [
     CreateUserComponent,
     UpdateUserComponent,
     ProfileComponent,
+    LoginComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), FormsModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 })
 export class UsersModule {}

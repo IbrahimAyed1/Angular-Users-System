@@ -2,29 +2,7 @@
   <div class="card w-75">
     <div class="card-body">
       <div class="d-flex align-items-center justify-content-center mt-2">
-        <form [formGroup]="profileForm">
-          <div class="mb-3">
-            <label for="firstName" class="form-label"
-              >First Name <span class="text-danger">*</span>
-            </label>
-            <input
-              formControlName="first_name"
-              type="text"
-              class="form-control"
-              id="firstName"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="lastName" class="form-label"
-              >last Name <span class="text-danger">*</span></label
-            >
-            <input
-              formControlName="last_name"
-              type="text"
-              class="form-control"
-              id="lastName"
-            />
-          </div>
+        <form [formGroup]="loginForm">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label"
               >Email address</label
@@ -54,11 +32,11 @@
           <div class="d-flex justify-content-between mt-2">
             <button
               (click)="onSubmit()"
-              [disabled]="!profileForm.valid"
+              [disabled]="!loginForm.valid"
               type="button"
               class="btn update-btn"
             >
-              Add User
+              Login
             </button>
             <button type="button" class="btn btn-danger" (click)="onCancel()">
               Cancel
