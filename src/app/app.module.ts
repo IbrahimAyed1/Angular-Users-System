@@ -8,6 +8,7 @@ import { SharedModule } from './shared-modules/shared.module';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NotfoundComponent } from './shared-modules/notfound/notfound.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
     path: 'users',
     loadChildren: () =>
       import('./users-module/users.module').then((m) => m.UsersModule),
+  },
+  {
+    path: '**',
+    component: NotfoundComponent,
   },
 ];
 
